@@ -14,7 +14,7 @@ I used multiple - if - else if - else - because it is reliable and clean.
 #include <string>   // string library
 #include <vector>   // vector library
 
-#define VERSION_NUM 1.2 // version number
+#define VERSION_NUM 1.21 // version number
 
 #define ROCK 1
 #define PAPER 2
@@ -27,13 +27,6 @@ I used multiple - if - else if - else - because it is reliable and clean.
 
 #define HUMAN 1
 #define CPU 2
-
-/*
-
-1 game = 1 RPS
-1 match = first to win 3 games
-
-*/
 
 // CALL	UPDATE EACH TIME!!!!!
 class CpuPlayer { // cpu player class
@@ -106,8 +99,7 @@ int main() {
 
 	while (1) {
 		std::cout <<
-			"Enter move : " << std::endl <<
-			">>>";
+			"Enter move : " << std::endl;
 
 		int cpuMove = CpuPlayer_.GetMove();     // cpu player makes its move - move generated BEFORE the human player
 		int humanMove = HumanPlayer_.GetMove(); // human player makes its move
@@ -249,6 +241,8 @@ HumanPlayer::HumanPlayer() {}
 HumanPlayer::~HumanPlayer() {}
 
 int HumanPlayer::GetMove() {
+	std::cout << ">>>";
+
 	std::string string;
 	std::cin >> string;
 	
